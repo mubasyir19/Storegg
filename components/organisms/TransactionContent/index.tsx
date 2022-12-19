@@ -1,15 +1,15 @@
-import { useCallback, useEffect, useState } from 'react';
-import NumberFormat from 'react-number-format';
-import { toast } from 'react-toastify';
-import { HistoryTransactionTypes } from '../../../services/data-types';
-import { getMemberTransactions } from '../../../services/member';
-import ButtonTab from './ButtonTab';
-import TableRow from './TableRow';
+import { useCallback, useEffect, useState } from "react";
+import NumberFormat from "react-number-format";
+import { toast } from "react-toastify";
+import { HistoryTransactionTypes } from "../../../services/data-types";
+import { getMemberTransactions } from "../../../services/member";
+import ButtonTab from "./ButtonTab";
+import TableRow from "./TableRow";
 
 export default function TransactionContent() {
   const [total, setTotal] = useState(0);
   const [transactions, setTransactions] = useState([]);
-  const [tab, setTab] = useState('all');
+  const [tab, setTab] = useState("all");
 
   const getMemberTransactionAPI = useCallback(async (value) => {
     const response = await getMemberTransactions(value);
@@ -23,7 +23,7 @@ export default function TransactionContent() {
   }, []);
 
   useEffect(() => {
-    getMemberTransactionAPI('all');
+    getMemberTransactionAPI("all");
   }, []);
 
   const onTabClick = (value: string) => {
@@ -40,34 +40,16 @@ export default function TransactionContent() {
         <div className='mb-30'>
           <p className='text-lg color-palette-2 mb-12'>You’ve spent</p>
           <h3 className='text-5xl fw-medium color-palette-1'>
-            <NumberFormat
-              value={total}
-              prefix='Rp. '
-              displayType='text'
-              thousandSeparator='.'
-              decimalSeparator=','
-            />
+            <NumberFormat value={total} prefix='Rp. ' displayType='text' thousandSeparator='.' decimalSeparator=',' />
           </h3>
         </div>
         <div className='row mt-30 mb-20'>
           <div className='col-lg-12 col-12 main-content'>
             <div id='list_status_title'>
-              <ButtonTab onClick={() => onTabClick('all')} title='All Trx' active={tab === 'all'} />
-              <ButtonTab
-                onClick={() => onTabClick('success')}
-                title='Success'
-                active={tab === 'sucesss'}
-              />
-              <ButtonTab
-                onClick={() => onTabClick('pending')}
-                title='Pending'
-                active={tab === 'pending'}
-              />
-              <ButtonTab
-                onClick={() => onTabClick('failed')}
-                title='Failed'
-                active={tab === 'failed'}
-              />
+              <ButtonTab onClick={() => onTabClick("all")} title='All Trx' active={tab === "all"} />
+              <ButtonTab onClick={() => onTabClick("success")} title='Success' active={tab === "sucesss"} />
+              <ButtonTab onClick={() => onTabClick("pending")} title='Pending' active={tab === "pending"} />
+              <ButtonTab onClick={() => onTabClick("failed")} title='Failed' active={tab === "failed"} />
             </div>
           </div>
         </div>

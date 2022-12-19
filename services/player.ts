@@ -1,12 +1,12 @@
-import axios from 'axios';
-import callAPI from '../config/api';
-import { CheckoutTypes } from './data-types';
+import axios from "axios";
+import callAPI from "../config/api";
+import { CheckoutTypes } from "./data-types";
 
 const ROOT_API = process.env.NEXT_PUBLIC_API;
-const API_VERSION = 'api/v1';
+const API_VERSION = "api/v1";
 
 export async function getFeaturedGame() {
-  const URL = 'players/landingpage';
+  const URL = "players/landingpage";
 
   const response = await axios.get(`${ROOT_API}/${API_VERSION}/${URL}`);
   const axiosResponse = response.data;
@@ -24,7 +24,7 @@ export async function getDetailVoucher(id: string) {
 }
 
 export async function getGameCategory() {
-  const URL = 'players/category';
+  const URL = "players/category";
 
   const response = await axios.get(`${ROOT_API}/${API_VERSION}/${URL}`);
   const axiosResponse = response.data;
@@ -37,7 +37,7 @@ export async function setCheckout(data: CheckoutTypes) {
 
   return callAPI({
     url,
-    method: 'POST',
+    method: "POST",
     data,
     token: true,
   });

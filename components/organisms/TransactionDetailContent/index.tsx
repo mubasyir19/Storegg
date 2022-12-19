@@ -1,5 +1,5 @@
-import { HistoryTransactionTypes } from '../../../services/data-types';
-import Row from './Row';
+import { HistoryTransactionTypes } from "../../../services/data-types";
+import Row from "./Row";
 
 interface TransactionDetailContentProps {
   data: HistoryTransactionTypes;
@@ -12,10 +12,7 @@ export default function TransactionDetailContent(props: TransactionDetailContent
   return (
     <main className='main-wrapper'>
       <div className='ps-lg-0'>
-        <h2 className='text-4xl fw-bold color-palette-1 mb-30'>
-          Details #
-          {data._id}
-        </h2>
+        <h2 className='text-4xl fw-bold color-palette-1 mb-30'>Details #{data._id}</h2>
         <div className='details'>
           <div className='main-content main-content-card overflow-auto'>
             <section className='checkout mx-auto'>
@@ -33,20 +30,12 @@ export default function TransactionDetailContent(props: TransactionDetailContent
                     </div>
                   </div>
                   <div>
-                    <p className='fw-bold text-xl color-palette-1 mb-10'>
-                      {data.historyVoucherTopup.gameName}
-                    </p>
-                    <p className='color-palette-2 m-0'>
-                      Category:
-                      {' '}
-                      {data.historyVoucherTopup.category}
-                    </p>
+                    <p className='fw-bold text-xl color-palette-1 mb-10'>{data.historyVoucherTopup.gameName}</p>
+                    <p className='color-palette-2 m-0'>Category: {data.historyVoucherTopup.category}</p>
                   </div>
                 </div>
                 <div>
-                  <p className='fw-medium text-center label pending m-0 rounded-pill'>
-                    {data.status}
-                  </p>
+                  <p className='fw-medium text-center label pending m-0 rounded-pill'>{data.status}</p>
                 </div>
               </div>
               <hr />

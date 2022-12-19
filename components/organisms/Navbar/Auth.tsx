@@ -1,20 +1,20 @@
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import Cookies from 'js-cookie';
-import jwtDecode from 'jwt-decode';
-import { useRouter } from 'next/router';
-import { JWTPayloadTypes, UserTypes } from '../../../services/data-types';
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+import jwtDecode from "jwt-decode";
+import { useRouter } from "next/router";
+import { JWTPayloadTypes, UserTypes } from "../../../services/data-types";
 
 export default function Auth() {
   // const { isLogin } = props;
   const [isLogin, setIsLogin] = useState(false);
   const [user, setUser] = useState({
-    avatar: '',
+    avatar: "",
   });
   const router = useRouter();
 
   useEffect(() => {
-    const token = Cookies.get('token');
+    const token = Cookies.get("token");
     if (token) {
       const jwtToken = atob(token);
       const payload: JWTPayloadTypes = jwtDecode(jwtToken);
@@ -30,8 +30,8 @@ export default function Auth() {
   }, []);
 
   const onLogout = () => {
-    Cookies.remove('token');
-    router.push('/');
+    Cookies.remove("token");
+    router.push("/");
     setIsLogin(false);
   };
   if (isLogin) {
@@ -83,10 +83,7 @@ export default function Auth() {
   return (
     <li className='nav-item my-auto'>
       <Link href='/sign-in'>
-        <a
-          className='btn btn-sign-in d-flex justify-content-center ms-lg-2 rounded-pill'
-          role='button'
-        >
+        <a className='btn btn-sign-in d-flex justify-content-center ms-lg-2 rounded-pill' role='button'>
           Sign In
         </a>
       </Link>

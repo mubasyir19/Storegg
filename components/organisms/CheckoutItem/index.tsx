@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export default function CheckOutItem() {
   const [dataItem, setDataItem] = useState({
-    thumbnail: ' ',
-    name: ' ',
+    thumbnail: " ",
+    name: " ",
     category: {
-      name: ' ',
+      name: " ",
     },
   });
   useEffect(() => {
-    const dataFromLocal = localStorage.getItem('data-item');
+    const dataFromLocal = localStorage.getItem("data-item");
     const dataItemLocal = JSON.parse(dataFromLocal!);
     // consosle.log("data-item: ", dataItemLocal);
     setDataItem(dataItemLocal);
@@ -25,11 +25,7 @@ export default function CheckOutItem() {
       </div>
       <div>
         <p className='fw-bold text-xl color-palette-1 mb-10'>{dataItem.name}</p>
-        <p className='color-palette-2 m-0'>
-          Category:
-          {' '}
-          {dataItem.category.name}
-        </p>
+        <p className='color-palette-2 m-0'>Category: {dataItem.category.name}</p>
       </div>
     </div>
   );

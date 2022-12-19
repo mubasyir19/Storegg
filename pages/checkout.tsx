@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import CheckoutConfirmation from '../components/organisms/CheckoutConfirmation';
-import CheckoutDetail from '../components/organisms/CheckoutDetail';
-import CheckoutItem from '../components/organisms/CheckoutItem';
+import Image from "next/image";
+import CheckoutConfirmation from "../components/organisms/CheckoutConfirmation";
+import CheckoutDetail from "../components/organisms/CheckoutDetail";
+import CheckoutItem from "../components/organisms/CheckoutItem";
 
 // interface CheckoutProps {
 //   user: UserTypes;
@@ -43,7 +43,7 @@ export async function getServerSideProps({ req }: GetServerSideProps) {
   if (!token) {
     return {
       redirect: {
-        destination: '/sign-in',
+        destination: "/sign-in",
         permanent: false,
       },
     };

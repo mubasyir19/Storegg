@@ -1,5 +1,5 @@
-import SideBar from '../../../components/organisms/SideBar';
-import TransactionContent from '../../../components/organisms/TransactionContent';
+import SideBar from "../../../components/organisms/SideBar";
+import TransactionContent from "../../../components/organisms/TransactionContent";
 
 export default function Transactions() {
   return (
@@ -23,7 +23,7 @@ export async function getServerSideProps({ req }: GetServerSideProps) {
   if (!token) {
     return {
       redirect: {
-        destination: '/sign-in',
+        destination: "/sign-in",
         permanent: false,
       },
     };

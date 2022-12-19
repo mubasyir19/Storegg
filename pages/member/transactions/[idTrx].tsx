@@ -1,7 +1,7 @@
-import jwtDecode from 'jwt-decode';
-import TransactionDetailContent from '../../../components/organisms/TransactionDetailContent';
-import { HistoryTransactionTypes, JWTPayloadTypes, UserTypes } from '../../../services/data-types';
-import { getTransactionDetail } from '../../../services/member';
+import jwtDecode from "jwt-decode";
+import TransactionDetailContent from "../../../components/organisms/TransactionDetailContent";
+import { HistoryTransactionTypes, JWTPayloadTypes, UserTypes } from "../../../services/data-types";
+import { getTransactionDetail } from "../../../services/member";
 
 interface TransactionsDetailProps {
   transactionDetail: HistoryTransactionTypes;
@@ -35,14 +35,14 @@ export async function getServerSideProps({ req, params }: GetServerSideProps) {
   if (!token) {
     return {
       redirect: {
-        destination: '/sign-in',
+        destination: "/sign-in",
         permanent: false,
       },
     };
   }
   // console.log("token: ", token);
 
-  const jwtToken = Buffer.from(token, 'base64').toString('ascii');
+  const jwtToken = Buffer.from(token, "base64").toString("ascii");
   // console.log("jwtToken: ", jwtToken);
   const payload: JWTPayloadTypes = jwtDecode(jwtToken);
   // console.log("payload: ", payload);

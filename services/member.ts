@@ -1,22 +1,22 @@
-import callAPI from '../config/api';
+import callAPI from "../config/api";
 
 const ROOT_API = process.env.NEXT_PUBLIC_API;
-const API_VERSION = 'api/v1';
+const API_VERSION = "api/v1";
 
 export async function getMemberOverview() {
   const url = `${ROOT_API}/${API_VERSION}/players/dashboard`;
 
   return callAPI({
     url,
-    method: 'GET',
+    method: "GET",
     token: true,
   });
 }
 
 export async function getMemberTransactions(valueParams: string) {
-  let params = '';
-  if (valueParams === 'all') {
-    params = '';
+  let params = "";
+  if (valueParams === "all") {
+    params = "";
   } else {
     params = `?status=${valueParams}`;
   }
@@ -24,7 +24,7 @@ export async function getMemberTransactions(valueParams: string) {
 
   return callAPI({
     url,
-    method: 'GET',
+    method: "GET",
     token: true,
   });
 }
@@ -34,7 +34,7 @@ export async function getTransactionDetail(id: string, token: string) {
 
   return callAPI({
     url,
-    method: 'GET',
+    method: "GET",
     serverToken: token,
   });
 }
@@ -44,7 +44,7 @@ export async function updateProfile(data: FormData, id: string) {
 
   return callAPI({
     url,
-    method: 'PUT',
+    method: "PUT",
     data,
     token: true,
   });
