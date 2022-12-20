@@ -20,6 +20,7 @@
     "react/jsx-props-no-spreading": "off",
     "no-underscore-dangle": "off",
     "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-one-expression-per-line": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -30,7 +31,8 @@
         "tsx": "never"
       }
     ],
-    "jsx-quotes": [2, "prefer-single"]
+    "jsx-quotes": [2, "prefer-single"],
+    "quotes": "off"
   },
   "settings": {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
@@ -39,9 +41,9 @@
     },
     "import/resolver": {
       "node": {
-          "extensions": [".js", ".jsx", ".ts", ".tsx"]
-          // "moduleDirectory": ["node_modules", "src/"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        // "moduleDirectory": ["node_modules", "src/"]
       }
+    }
   }
-}
 }
