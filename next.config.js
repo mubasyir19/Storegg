@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ["mahdy-storegg.herokuapp.com"],
+    domains: ["mahdy-storegg.up.railway.app"],
   },
 };
